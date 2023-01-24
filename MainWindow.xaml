@@ -1,0 +1,36 @@
+﻿<Window x:Class="Chrome_images.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chrome_images"
+        mc:Ignorable="d"
+        Title="Завантаження" Height="450" Width="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock TextAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Text="Введіть розмір :" Margin="0,20,0,20"/>
+            <TextBox x:Name="size" Grid.Column="1" Margin="5,20,5,20"/>
+            <TextBlock Grid.Row="1" TextAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Text="Виберіть категорію(необов'язково):" Margin="0,20,0,20"/>
+            <ComboBox x:Name="categories" Grid.Row="1" Grid.Column="1" Margin="5,20,5,20" SelectedIndex="0">
+                <ComboBoxItem Content="None"/>
+                <ComboBoxItem Content="Travel"/>
+                <ComboBoxItem Content="Experimental"/>
+                <ComboBoxItem Content="Film"/>
+                <ComboBoxItem Content="People"/>
+                <ComboBoxItem Content="Athletics"/>
+            </ComboBox>
+            <Button x:Name="clear" Content="Очистити" Grid.Row="2" Margin="20" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="ClearEvent"/>
+            <Button x:Name="download" Content="Завантажити" Grid.Row="2" Grid.Column="1" Margin="20" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="DownloadEvent"/>
+        </Grid>
+        <ListBox DockPanel.Dock="Bottom" x:Name="history" Margin="10"/>
+    </DockPanel>
+</Window>
